@@ -106,6 +106,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun calculateIMC():Double {
         val df = DecimalFormat("#.##")
         val imc = currentWeight / (currentHeight.toDouble() /100 * currentHeight.toDouble()/100)
+        // val imc = (currentWeight * 10000).toDouble() / (currentHeight * currentHeight)
         return df.format(imc).toDouble()
     }
 

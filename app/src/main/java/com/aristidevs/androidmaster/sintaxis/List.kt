@@ -1,7 +1,7 @@
 package com.aristidevs.androidmaster.sintaxis
 
 fun main(){
-    mutableList()
+    inmutableList()
 }
 
 fun mutableList() {
@@ -9,23 +9,24 @@ fun mutableList() {
     weekDays.add(3,"AristiDay")
     println(weekDays)
 
-    if(weekDays.isEmpty()){
-        //No voy a pintar nada porque no hay
-    }else{
-        weekDays.forEach { println(it) }
-    }
+//    if(weekDays.isEmpty()){
+//        //No voy a pintar nada porque no hay
+//    }else{
+//        weekDays.forEach { println(it) }
+//    }
 
     if(weekDays.isNotEmpty()){
         weekDays.forEach { println(it) }
     }
 
-    weekDays.last()
+    val last = weekDays.last()
+    println("El último día de la semana es: $last")
 
-    for(SUSCRIBETE in weekDays){
+//    for(SUSCRIBETE in weekDays){
+//
+//    }
 
-    }
-
-    weekDays.forEach {  }
+//    weekDays.forEach { it -> println(it) }
 }
 
 fun inmutableList(){
@@ -42,5 +43,5 @@ fun inmutableList(){
     println(example)
 
     //Iterar
-    readOnly.forEach { weekDay -> println(weekDay) }
+    readOnly.forEach { println(it) }
 }

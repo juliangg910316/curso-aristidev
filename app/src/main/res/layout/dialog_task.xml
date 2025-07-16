@@ -51,7 +51,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/todo_dialog_add_task_button"
-        android:backgroundTint="@color/todo_accent"/>
+        android:enabled="false"
+        android:background="@drawable/btn_add_task_background"
+        />
 
 
 </LinearLayout>

@@ -3,10 +3,12 @@ package com.aristidevs.androidmaster.todoapp
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aristidevs.androidmaster.R
@@ -54,6 +56,11 @@ class TodoActivity : AppCompatActivity() {
         val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
         val etTask: EditText = dialog.findViewById(R.id.etTask)
         val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        etTask.addTextChangedListener { etTask ->
+            Log.i("addTextChangedListener", etTask.toString())
+            btnAddTask.isEnabled = etTask.toString().isNotEmpty()
+        }
 
         btnAddTask.setOnClickListener {
             val currentTask = etTask.text.toString()
