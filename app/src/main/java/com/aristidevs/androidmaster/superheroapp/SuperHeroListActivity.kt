@@ -55,10 +55,15 @@ class SuperHeroListActivity : AppCompatActivity() {
             if (myResponse.isSuccessful) {
                 Log.i("aristidevs", "funciona :)")
                 val response: SuperHeroDataResponse? = myResponse.body()
-                if (response != null) {
+                if (response != null && response.response == "success") {
                     Log.i("aristidevs", response.toString())
                     runOnUiThread {
                         adapter.updateList(response.superheroes)
+                        binding.progressBar.isVisible = false
+                    }
+                } else {
+                    Log.i("aristidevs", "No se encontraron superheroes")
+                    runOnUiThread {
                         binding.progressBar.isVisible = false
                     }
                 }

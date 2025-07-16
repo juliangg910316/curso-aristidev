@@ -15,11 +15,7 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun render(taskCategory: TaskCategory, onItemSelected: (Int) -> Unit) {
 
-        val color = if (taskCategory.isSelected) {
-            R.color.todo_background_card
-        } else {
-            R.color.todo_background_disabled
-        }
+        val color = if (taskCategory.isSelected) R.color.todo_background_card else R.color.todo_background_disabled
 
         viewContainer.setCardBackgroundColor(ContextCompat.getColor(viewContainer.context, color))
 
@@ -27,19 +23,19 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         when (taskCategory) {
             TaskCategory.Business -> {
-                tvCategoryName.text = "Negocios"
+                tvCategoryName.text = viewContainer.context.getString(R.string.todo_dialog_category_business)
                 divider.setBackgroundColor(
                     ContextCompat.getColor(divider.context, R.color.todo_business_category)
                 )
             }
             TaskCategory.Other -> {
-                tvCategoryName.text = "Otros"
+                tvCategoryName.text = viewContainer.context.getString(R.string.todo_dialog_category_other)
                 divider.setBackgroundColor(
                     ContextCompat.getColor(divider.context, R.color.todo_other_category)
                 )
             }
             TaskCategory.Personal -> {
-                tvCategoryName.text = "Personal"
+                tvCategoryName.text = viewContainer.context.getString(R.string.todo_dialog_category_personal)
                 divider.setBackgroundColor(
                     ContextCompat.getColor(divider.context, R.color.todo_personal_category)
                 )
