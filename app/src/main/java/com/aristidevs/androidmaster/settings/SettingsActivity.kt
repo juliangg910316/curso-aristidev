@@ -76,11 +76,7 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.switchDarkMode.setOnCheckedChangeListener { _, value ->
 
-            if(value){
-                enableDarkMode()
-            }else{
-                disableDarkMode()
-            }
+            if(value) enableDarkMode() else disableDarkMode()
 
             CoroutineScope(Dispatchers.IO).launch {
                 saveOptions(KEY_DARK_MODE, value)
